@@ -9,7 +9,7 @@ function UpdateUser() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get('http://localhost:3001/getUser/' + id)
+        axios.get('https://crud-2be.onrender.com/getUser/' + id)
             .then(result => {
                 console.log(result)
                 setName(result.data.name)
@@ -25,7 +25,7 @@ function UpdateUser() {
 
     const Update = (e) => {
         e.preventDefault();
-        axios.put("http://localhost:3001/updateUser/" + id, { name, email, age })
+        axios.put("https://crud-2be.onrender.com/updateUser/" + id, { name, email, age })
             .then(result => {
                 navigate('/')
 

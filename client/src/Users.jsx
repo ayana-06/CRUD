@@ -7,7 +7,7 @@ function Users() {
     ])
 
     useEffect(() => {
-        axios.get('http://localhost:3001')
+        axios.get('https://crud-2be.onrender.com')
             .then(result => setUsers(result.data))
             .catch(err => console.log(err))
 
@@ -16,7 +16,7 @@ function Users() {
 
 
     const handleDelete = (id) => {
-        axios.delete('http://localhost:3001/deleteUser/' + id)
+        axios.delete('https://crud-2be.onrender.com/deleteUser/' + id)
             .then(res => {
                 console.log(res)
                 window.location.reload()
