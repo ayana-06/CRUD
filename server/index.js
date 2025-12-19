@@ -8,8 +8,13 @@ app.use(cors())
 app.use(express.json())
 
 const port = process.env.PORT || 3001;
+mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+    .then(() => console.log("MongoDB connected"))
+    .catch(err => console.log(err));
 
-mongoose.connect("mongodb://127.0.0.1:27017/crud")
 
 app.get('/', (req, res) => {
     UserModel.find({})
