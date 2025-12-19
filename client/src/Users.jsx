@@ -45,7 +45,7 @@ function Users() {
                     <tbody>
                         {
                             users.map((user) => {
-                                return <tr>
+                                return <tr key={user._id}>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
                                     <td>{user.age}</td>
